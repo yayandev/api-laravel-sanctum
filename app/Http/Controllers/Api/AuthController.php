@@ -74,4 +74,11 @@ class AuthController extends Controller
             'message' => 'Logout Berhasil!',
         ]);
     }
+
+    public function Unauthorized() {
+        return response()->json([
+            'status' => false,
+            'message' => 'Unauthorized',
+        ]);
+    }
 }
