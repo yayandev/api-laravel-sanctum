@@ -22,7 +22,10 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
     Route::post('/logout', [AuthController::class, 'Logout']);
     Route::post('/posts', [PostController::class, 'create']);
+    Route::delete('/posts/{id}', [PostController::class, 'destroy']);
+    Route::put('/posts/{id}', [PostController::class, 'update']);
 });
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'showall']);
+Route::get('/posts/{id}', [PostController::class, 'showDetail']);
 Route::post('/register', [AuthController::class, 'Register']);
 Route::post('/login', [AuthController::class, 'Login']);
